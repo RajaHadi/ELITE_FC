@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Match } from "@/types/match";
+import { formatDate } from "@/lib/utils";
 
 interface MatchCardProps {
   match: Match;
@@ -24,11 +25,7 @@ export default function MatchCard({ match, isLatest }: MatchCardProps) {
         <div className="flex items-center justify-between">
           {/* Date */}
           <div className="text-sm text-slate-400">
-            {new Date(match.date).toLocaleDateString("en-GB", {
-              day: "numeric",
-              month: "short",
-              year: "numeric",
-            })}
+            {formatDate(match.date)}
             {match.time && (
               <span className="ml-2">{match.time}</span>
             )}

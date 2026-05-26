@@ -26,15 +26,43 @@
   --color-accent-high: var(--accent-high);
   --color-accent-mid: var(--accent-mid);
   --color-accent-low: var(--accent-low);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+}
+
+@utility font-heading {
+  font-family: var(--font-heading);
+}
+
+@utility font-body {
+  font-family: var(--font-body);
+}
+
+@utility tilted-left {
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
+}
+
+@utility tilted-right {
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 10% 100%);
+}
+
+@utility gold-glow {
+  box-shadow: 0 0 20px rgba(204, 150, 43, 0.2);
+}
+
+@utility gold-gradient {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), sans-serif;
   min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), sans-serif;
 }
 
 html {

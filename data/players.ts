@@ -4,7 +4,7 @@ export const players: Player[] = [
   {
     id: "hadi",
     name: "Hadi",
-    image: "",
+    image: "/players/Hadi.jpeg",
     position: "CMF",
     rating: 88,
     stats: {
@@ -21,7 +21,7 @@ export const players: Player[] = [
   {
     id: "muneeb",
     name: "Muneeb",
-    image: "",
+    image: "/players/Muneeb.jpeg",
     position: "LW",
     rating: 86,
     stats: {
@@ -38,7 +38,7 @@ export const players: Player[] = [
   {
     id: "hassan",
     name: "Hassan",
-    image: "",
+    image: "/players/Hassan.jpeg",
     position: "RW",
     rating: 85,
     stats: {
@@ -55,7 +55,7 @@ export const players: Player[] = [
   {
     id: "abdullah",
     name: "Abdullah",
-    image: "",
+    image: "/players/Abdullah.jpeg",
     position: "LCB",
     rating: 83,
     stats: {
@@ -72,7 +72,7 @@ export const players: Player[] = [
   {
     id: "uzair",
     name: "Uzair",
-    image: "",
+    image: "/players/Uzair.jpeg",
     position: "CB",
     rating: 84,
     stats: {

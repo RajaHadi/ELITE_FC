@@ -1,10 +1,5 @@
 import type { PlayerStats as PlayerStatsType } from "@/types/player";
-
-function getStatColor(value: number): string {
-  if (value >= 80) return "bg-accent-high";
-  if (value >= 60) return "bg-accent-yellow";
-  return "bg-accent-red";
-}
+import { getStatColor } from "@/lib/utils";
 
 interface PlayerStatsComponentProps {
   stats: PlayerStatsType;
@@ -34,18 +29,12 @@ export default function PlayerStats({
             </span>
             <div className="flex-1 h-2 bg-slate-700 rounded-full overflow-hidden">
               <div
-                className={`h-full ${getStatColor(value)} rounded-full transition-all duration-500`}
+                className={`h-full ${getStatColor(value, "bg")} rounded-full transition-all duration-500`}
                 style={{ width: `${value}%` }}
               />
             </div>
             <span
-              className={`w-8 text-right font-bold ${
-                value >= 80
-                  ? "text-accent-high"
-                  : value >= 60
-                    ? "text-accent-yellow"
-                    : "text-accent-red"
-              }`}
+              className={`w-8 text-right font-bold ${getStatColor(value, "text")}`}
             >
               {value}
             </span>
