@@ -1,5 +1,6 @@
 import { Match } from "@/types/match";
 import { players } from "@/data/players";
+import { formatDate } from "@/lib/utils";
 
 interface MatchDetailCardProps {
   match: Match;
@@ -11,7 +12,7 @@ export default function MatchDetailCard({ match }: MatchDetailCardProps) {
     ? players.find((p) => p.id === match.manOfTheMatch)
     : null;
 
-  const formattedDate = new Date(match.date).toLocaleDateString("en-GB", {
+  const formattedDate = formatDate(match.date, {
     weekday: "long",
     day: "numeric",
     month: "long",

@@ -4,12 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Player } from "@/types/player";
 import PlayerImage from "./PlayerImage";
-
-function getStatColor(value: number): string {
-  if (value >= 80) return "text-accent-high";
-  if (value >= 60) return "text-accent-yellow";
-  return "text-accent-red";
-}
+import { getStatColor } from "@/lib/utils";
 
 interface PlayerCardProps {
   player: Player;
@@ -17,12 +12,6 @@ interface PlayerCardProps {
 }
 
 export default function PlayerCard({ player, size = "md" }: PlayerCardProps) {
-  const sizeClasses = {
-    sm: "w-36 sm:w-44",
-    md: "w-full",
-    lg: "w-72",
-  };
-
   const ratingColor =
     player.rating >= 85
       ? "text-gold"
@@ -31,48 +20,42 @@ export default function PlayerCard({ player, size = "md" }: PlayerCardProps) {
         : "text-accent-yellow";
 
   return (
-    <Link href={`/players/${player.id}`} className="block">
+    <Link href={`/players/${player.id}`} className="group block">
       <motion.div
         layoutId={`card-${player.id}`}
-        whileHover={{ scale: 1.03, boxShadow: "0 0 20px rgba(0, 180, 216, 0.3)" }}
-        transition={{ duration: 0.2 }}
-        className={`relative ${sizeClasses[size]} mx-auto overflow-hidden rounded-2xl bg-gradient-to-b from-slate-800 to-slate-900 border border-card-border cursor-pointer`}
+        whileHover={{ y: -10 }}
+        transition={{ duration: 0.3 }}
+        className="relative w-full overflow-visible"
       >
-        {/* Rating + Position */}
-        <div className="absolute top-2 left-3 sm:top-3 sm:left-4 z-10">
-          <div className={`text-3xl sm:text-4xl font-black ${ratingColor}`}>
-            {player.rating}
-          </div>
-          <div className="text-sm sm:text-base font-bold text-slate-300 -mt-1">
-            {player.position}
-          </div>
-        </div>
-
-        {/* Player Image */}
-        <div className="relative h-48 sm:h-56 w-full overflow-hidden">
+        {/* The Tilted Frame */}
+        <div className="relative aspect-[3/4] overflow-hidden rounded-2xl tilted-left border border-gold/20 bg-slate-900 gold-glow group-hover:border-gold/50 transition-all">
           <PlayerImage src={player.image} alt={player.name} />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent" />
-        </div>
-
-        {/* Name */}
-        <div className="p-3 sm:p-4 pt-1 text-center">
-          <p className="font-bold text-sm sm:text-base text-foreground truncate">
-            {player.name}
-          </p>
-        </div>
-
-        {/* Stats Grid */}
-        <div className="grid grid-cols-3 gap-x-2 gap-y-1 px-3 sm:px-4 pb-3 sm:pb-4 text-xs sm:text-sm">
-          {Object.entries(player.stats).map(([key, value]) => (
-            <div key={key} className="flex items-center gap-1 sm:gap-1.5">
-              <span className="font-bold text-slate-400 uppercase w-3 sm:w-4">
-                {key[0].toUpperCase()}
-              </span>
-              <span className={`font-semibold ${getStatColor(value)}`}>
-                {value}
-              </span>
+          
+          {/* Overlay Gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80" />
+          
+          {/* Rating Badge */}
+          <div className="absolute top-4 left-6 z-20">
+            <div className={`text-4xl font-black italic tracking-tighter ${ratingColor}`}>
+              {player.rating}
             </div>
-          ))}
+            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest -mt-1">
+              {player.position}
+            </div>
+          </div>
+
+          {/* Info Overlay at Bottom */}
+          <div className="absolute bottom-0 left-0 right-0 p-6 z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform">
+            <h4 className="text-xl font-black text-foreground uppercase italic tracking-tighter mb-1">
+              {player.name}
+            </h4>
+            <div className="h-0.5 w-8 bg-gold rounded-full group-hover:w-16 transition-all" />
+          </div>
+        </div>
+
+        {/* Floating Stat - Pace or Rating */}
+        <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-gold flex items-center justify-center text-slate-900 font-black text-sm border-4 border-background z-30 shadow-xl group-hover:scale-110 transition-transform">
+          {player.stats.pace}
         </div>
       </motion.div>
     </Link>
