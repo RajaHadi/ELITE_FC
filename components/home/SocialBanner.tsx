@@ -12,7 +12,7 @@ export default function SocialBanner() {
 
         <div className="relative z-10 py-12 px-8 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div>
-            <h3 className="text-3xl md:text-4xl font-black text-foreground uppercase italic tracking-tighter mb-2">
+            <h3 className="text-3xl md:text-4xl font-bold text-foreground uppercase tracking-wide mb-2">
               Meet us online, it's <span className="text-gold">FREE</span>
             </h3>
             <p className="text-slate-400 font-medium tracking-wide uppercase text-xs">

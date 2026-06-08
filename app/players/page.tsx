@@ -34,7 +34,7 @@ export default function PlayersPage() {
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-12"
       >
-        <h1 className="text-5xl font-black text-foreground uppercase italic tracking-tighter mb-4">
+        <h1 className="text-5xl font-bold text-foreground uppercase tracking-wide mb-4">
           ELITE <span className="text-gold">SQUAD</span>
         </h1>
         <div className="h-1 w-24 bg-gold mx-auto rounded-full" />

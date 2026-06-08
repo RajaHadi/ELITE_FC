@@ -46,7 +46,7 @@ export default function PlayerCard({ player, size = "md" }: PlayerCardProps) {
 
           {/* Info Overlay at Bottom */}
           <div className="absolute bottom-0 left-0 right-0 p-6 z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform">
-            <h4 className="text-xl font-black text-foreground uppercase italic tracking-tighter mb-1">
+            <h4 className="text-xl font-bold text-foreground uppercase tracking-wide mb-1">
               {player.name}
             </h4>
             <div className="h-0.5 w-8 bg-gold rounded-full group-hover:w-16 transition-all" />

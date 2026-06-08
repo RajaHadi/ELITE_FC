@@ -42,7 +42,7 @@ export default function HomePage() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="text-center md:text-left">
                 <h2 className="text-gold font-bold uppercase tracking-widest text-xs mb-2">Match Center</h2>
-                <h3 className="text-4xl font-black text-foreground uppercase italic tracking-tighter">SEASON <span className="text-gold">ACTION</span></h3>
+                <h3 className="text-4xl font-bold text-foreground uppercase tracking-wide">SEASON <span className="text-gold">ACTION</span></h3>
               </div>
               <div className="flex flex-col sm:flex-row gap-6 w-full md:w-auto">
                 {latestMatch && (

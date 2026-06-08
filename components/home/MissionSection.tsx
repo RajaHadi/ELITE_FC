@@ -15,7 +15,7 @@ export default function MissionSection() {
           className="order-2 md:order-1"
         >
           <h2 className="text-gold font-bold uppercase tracking-widest text-sm mb-4">True Story</h2>
-          <h3 className="text-4xl md:text-5xl font-black text-foreground mb-6 uppercase italic tracking-tighter">
+          <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-6 uppercase tracking-wide">
             OUR <span className="text-gold">MISSION</span>
           </h3>
           
