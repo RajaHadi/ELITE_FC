@@ -25,7 +25,7 @@ export default function HeroSection() {
             Season 2026 Active
           </div>
           
-          <h1 className="text-6xl lg:text-8xl font-black text-foreground mb-6 leading-[0.9] uppercase italic tracking-tighter">
+          <h1 className="text-6xl lg:text-[100px] font-bold text-foreground mb-6 leading-[0.85] uppercase tracking-wide">
             From Zero to <br />
             <span className="text-gold">Football</span> Hero
           </h1>

@@ -36,7 +36,7 @@ export default function FeaturedPlayers() {
         className="text-center mb-16"
       >
         <motion.h2 variants={itemVariants} className="text-gold font-bold uppercase tracking-widest text-sm mb-4">Our Elite Squad</motion.h2>
-        <motion.h3 variants={itemVariants} className="text-5xl md:text-7xl font-black text-foreground uppercase italic tracking-tighter">
+        <motion.h3 variants={itemVariants} className="text-5xl md:text-7xl font-bold text-foreground uppercase tracking-wide">
           OUR <span className="text-gold">TEAM</span>
         </motion.h3>
       </motion.div>

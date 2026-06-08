@@ -33,7 +33,7 @@ export default function AboutSection() {
           viewport={{ once: true }}
         >
           <h2 className="text-gold font-bold uppercase tracking-widest text-sm mb-4">About the Club</h2>
-          <h3 className="text-4xl md:text-5xl font-black text-foreground mb-8 uppercase italic tracking-tighter">
+          <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-8 uppercase tracking-wide">
             WITH US YOU <span className="text-gold">CAN</span>
           </h3>
           
